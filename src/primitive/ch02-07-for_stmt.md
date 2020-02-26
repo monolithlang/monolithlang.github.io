@@ -1,4 +1,4 @@
-# 2.7 For statement
+# For statement
 
 `for` statement use conceptions from Go, no needs for `loop`, `while`, `do`. One looping construction.
 

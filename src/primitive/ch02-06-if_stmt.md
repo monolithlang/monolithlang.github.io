@@ -1,4 +1,4 @@
-# 2.6 If statement
+# If statement
 
 Traditional `if` statement, with else-if branch.
 ```rust

@@ -1,9 +1,15 @@
 [book]
 src = "src"
 authors = ["0x9ef"]
-language = "en"
 title = "The Monolith Programming Language"
+description = "The Monolith Programming Language Book"
 multilingual = false
 
 [output.html.playpen]
 editable = true
+copyable = true
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/monolithlang/monolith"

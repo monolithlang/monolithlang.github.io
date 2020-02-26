@@ -1,10 +1,10 @@
 # Introduction
 
-Monolith is very similar to the C Programming Language, some princips taked from C and Rust.
+**Monolith** is very similar to the **C Programming Language**, some princips taked from C and Rust.
 I wanna make an ideal and powerful programming language for developing maintainable software. As of right now, I don’t  know any languages suitable for my purposes.
 
 Monolith arose with several thoughts about: 
-> Create programming language that can be used as a main tool for complexity development maintainable software for all categories until to a death.
+> \> Create programming language that can be used as a main tool for complexity development maintainable software for all categories until to a death.
 
 Monolith can be used for develop low-level software and components like a OS (Operating Systems), drivers, system software, for develop maintainable software like a browsers, desktop application, bots and other.
 

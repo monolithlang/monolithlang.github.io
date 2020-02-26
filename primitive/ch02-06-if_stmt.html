@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js ayu">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>2.2 Functions - The Monolith Programming Language</title>
+        <title>If statement - The Monolith Programming Language</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="The Monolith Programming Language Book">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -36,7 +36,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="../introduction.html">Introduction</a></li><li class="expanded affix "><a href="../gstarted.html">Getting Started</a></li><li class="expanded "><a href="../primitive/variables.html"><strong aria-hidden="true">1.</strong> 2.1 Variables</a></li><li class="expanded "><a href="../primitive/functions.html" class="active"><strong aria-hidden="true">2.</strong> 2.2 Functions</a></li><li class="expanded "><a href="../primitive/strings.html"><strong aria-hidden="true">3.</strong> 2.3 Strings</a></li><li class="expanded "><a href="../primitive/arrays.html"><strong aria-hidden="true">4.</strong> 2.4 Arrays &amp; Slices</a></li><li class="expanded "><a href="../primitive/if_stmt.html"><strong aria-hidden="true">5.</strong> 2.5 If statement</a></li><li class="expanded "><a href="../primitive/for_stmt.html"><strong aria-hidden="true">6.</strong> 2.6 For statement</a></li><li class="expanded "><a href="../primitive/switch_stmt.html"><strong aria-hidden="true">7.</strong> 2.7 Switch statement</a></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="../introduction.html">Introduction</a></li><li class="expanded "><a href="../gstarted.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="../gstarted/ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="../gstarted/ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello World</a></li></ol></li><li class="expanded "><a href="../primitive.html"><strong aria-hidden="true">2.</strong> Primitive</a></li><li><ol class="section"><li class="expanded "><a href="../primitive/ch02-01-comments.html"><strong aria-hidden="true">2.1.</strong> Comments</a></li><li class="expanded "><a href="../primitive/ch02-02-variables.html"><strong aria-hidden="true">2.2.</strong> Variables</a></li><li class="expanded "><a href="../primitive/ch02-03-functions.html"><strong aria-hidden="true">2.3.</strong> Functions</a></li><li class="expanded "><a href="../primitive/ch02-04-strings.html"><strong aria-hidden="true">2.4.</strong> Strings</a></li><li class="expanded "><a href="../primitive/ch02-05-arrays.html"><strong aria-hidden="true">2.5.</strong> Arrays &amp; Slices</a></li><li class="expanded "><a href="../primitive/ch02-06-if_stmt.html" class="active"><strong aria-hidden="true">2.6.</strong> If statement</a></li><li class="expanded "><a href="../primitive/ch02-07-for_stmt.html"><strong aria-hidden="true">2.7.</strong> For statement</a></li><li class="expanded "><a href="../primitive/ch02-08-switch_stmt.html"><strong aria-hidden="true">2.8.</strong> Switch statement</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -100,11 +100,11 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
                             </ul>
                             
                             <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
@@ -118,6 +118,10 @@
                         <div class="right-buttons">
                             <a href="../print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/monolithlang/monolith" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -148,38 +152,48 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#22-functions" id="22-functions">2.2 Functions</a></h1>
-<blockquote>
-<p>WARN: Function can have default values, but cannot be overloaded.</p>
-</blockquote>
-<p>Function without any arguments and returned values.</p>
-<pre><code class="language-go">func nosense() -&gt; {}
-</code></pre>
-<p>Primitive function with two arguments but without default values.</p>
-<pre><code class="language-go">#[[inline]]
-func mul(a, b int32) -&gt; int64 {
-    return (int64)a * b;
-}
-</code></pre>
-<p>Primitive function with arguments and default values.</p>
-<pre><code class="language-go">#[[inline]]
-func mul_by_default_64(a, b int32_t = 64) -&gt; int64_t {
-    return (int64_t)a * b;
-}
-</code></pre>
+                        <h1><a class="header" href="#if-statement" id="if-statement">If statement</a></h1>
+<p>Traditional <code>if</code> statement, with else-if branch.</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let x = 10;
+    if (x &gt; 10) {
+        x = -1;
+    } else if (x &lt; 10) {
+        x += x * x;
+    } else {
+        x = 0;
+    }
+    std::printf(&quot;%d&quot;, x) // 0
+<span class="boring">}
+</span></code></pre></pre>
+<p><code>if</code> can be used as an expression.</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let a, b = 0, 10;
+    let x = if ((a + b) == 10) {
+        100
+    } else {
+        -1
+    } 
+    std::printf(&quot;%d&quot;, x); // 100
+<span class="boring">}
+</span></code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../primitive/variables.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../primitive/ch02-05-arrays.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../primitive/strings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../primitive/ch02-07-for_stmt.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -191,13 +205,13 @@ func mul_by_default_64(a, b int32_t = 64) -&gt; int64_t {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../primitive/variables.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../primitive/ch02-05-arrays.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../primitive/strings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../primitive/ch02-07-for_stmt.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

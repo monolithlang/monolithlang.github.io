@@ -1,4 +1,4 @@
-# 2.8 Switch statement
+# Switch statement
 
 `switch` conception similar to C, Go.
 

@@ -1,9 +1,7 @@
-# 2.3 Strings
+# Strings
 
 Monolith have two builtin types for release one-byte string or multi-wide string.
-Traditional one-byte string assigned with data type `string`, multi-wide string only can have `ustring` data type with adjacent aliases. 
-
-Monolith can emit raw string, emit multiline string and one-byte (char) string.
+Traditional one-byte string assigned with type string, multi-wide string only can have ustring data type with adjacent aliases. 
 
 ```rust
     // Simple double-quoted string.

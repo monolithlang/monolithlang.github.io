@@ -1,8 +1,9 @@
-# 2.1 Variables
+# Variables
 
 Variables only are declared with `let` keyword. `let` statement support multiple-variable declaration.
 
-**Note** `let` only means a LOCAL declaration inside of function. If you want to declare constant or static variable outside of function, you must use:
+**Note:** let only means a LOCAL declaration inside of function. If you want to declare constant or static variable outside of function, you must use:
+
 `const IDENT [type] = value;` | `static IDENT [type] = value;` without `let` keyword.
 
 ```rust
