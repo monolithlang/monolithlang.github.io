@@ -1,0 +1,9 @@
+[book]
+src = "src"
+authors = ["0x9ef"]
+language = "en"
+title = "The Monolith Programming Language"
+multilingual = false
+
+[output.html.playpen]
+editable = true
