@@ -1,242 +1,188 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js ayu">
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Monolith Programming Language</title>
+        
+        <meta name="robots" content="noindex" />
+        
 
-<head>
-    <!-- Book generated using mdBook -->
-    <meta charset="UTF-8">
-    <title>The Monolith Programming Language</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The Monolith Programming Language Book">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
-    <meta name="robots" content="noindex" />
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
 
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="description" content="The Monolith Programming Language Book">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" />
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
-    <link rel="shortcut icon" href="favicon.png">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/chrome.css">
-    <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Custom theme stylesheets -->
+        
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="fontawesome/css/font-awesome.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-        rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
 
-    <!-- Highlight.js Stylesheets -->
-    <link rel="stylesheet" href="highlight.css">
-    <link rel="stylesheet" href="tomorrow-night.css">
-    <link rel="stylesheet" href="ayu-highlight.css">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
 
-    <!-- Custom theme stylesheets -->
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
 
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
 
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
 
-</head>
-
-<body>
-    <!-- Provide site root to javascript -->
-    <script type="text/javascript">
-        var path_to_root = "";
-        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
-    </script>
-
-    <!-- Work around some values being stored in localStorage wrapped in quotes -->
-    <script type="text/javascript">
-        try {
-            var theme = localStorage.getItem('mdbook-theme');
-            var sidebar = localStorage.getItem('mdbook-sidebar');
-
-            if (theme.startsWith('"') && theme.endsWith('"')) {
-                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
             }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
 
-            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-            }
-        } catch (e) { }
-    </script>
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="introduction.html">Introduction</a></li><li class="expanded "><a href="getstarted.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="getstarted/ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="getstarted/ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello World</a></li></ol></li><li class="expanded "><a href="primitives.html"><strong aria-hidden="true">2.</strong> Primitives</a></li><li><ol class="section"><li class="expanded "><a href="primitives/ch02-01-comments.html"><strong aria-hidden="true">2.1.</strong> Comments</a></li><li class="expanded "><a href="primitives/ch02-02-operators.html"><strong aria-hidden="true">2.2.</strong> Operators</a></li><li class="expanded "><a href="primitives/ch02-03-keywords.html"><strong aria-hidden="true">2.3.</strong> Keywords</a></li><li class="expanded "><a href="primitives/ch02-04-literals.html"><strong aria-hidden="true">2.4.</strong> Literals</a></li><li><ol class="section"><li class="expanded "><a href="primitives/ch02-05-binary.html"><strong aria-hidden="true">2.4.1.</strong> Binary literal</a></li><li class="expanded "><a href="primitives/ch02-06-octal.html"><strong aria-hidden="true">2.4.2.</strong> Octal literal</a></li><li class="expanded "><a href="primitives/ch02-07-hexadecimal.html"><strong aria-hidden="true">2.4.3.</strong> Hexadecimal literal</a></li></ol></li><li class="expanded "><a href="primitives/ch02-08-tuples.html"><strong aria-hidden="true">2.5.</strong> Tuples</a></li><li class="expanded "><a href="primitives/ch02-09-arrays-slices.html"><strong aria-hidden="true">2.6.</strong> Arrays &amp; Slices</a></li><li class="expanded "><a href="primitives/ch02-10-constants-modifiers.html"><strong aria-hidden="true">2.7.</strong> Constants &amp; Modifiers</a></li></ol></li><li class="expanded "><a href="types.html"><strong aria-hidden="true">3.</strong> Types</a></li><li><ol class="section"><li class="expanded "><a href="types/ch03-01-casting.html"><strong aria-hidden="true">3.1.</strong> Casting</a></li><li class="expanded "><a href="types/ch03-02-aliasing.html"><strong aria-hidden="true">3.2.</strong> Aliasing</a></li><li class="expanded "><a href="types/ch03-03-sum-types.html"><strong aria-hidden="true">3.3.</strong> Sum types</a></li></ol></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li><ol class="section"><li class="expanded "><a href="functions/ch04-01-complex.html"><strong aria-hidden="true">4.1.</strong> Complex</a></li><li class="expanded "><a href="functions/ch04-02-methods.html"><strong aria-hidden="true">4.2.</strong> Methods</a></li><li class="expanded "><a href="functions/ch04-03-closures.html"><strong aria-hidden="true">4.3.</strong> Closures</a></li><li class="expanded "><a href="functions/ch04-04-pure.html"><strong aria-hidden="true">4.4.</strong> Pure</a></li><li class="expanded "><a href="functions/ch04-05-inlined.html"><strong aria-hidden="true">4.5.</strong> Inlined</a></li><li class="expanded "><a href="functions/ch04-06-high-order.html"><strong aria-hidden="true">4.6.</strong> High Order</a></li></ol></li><li class="expanded "><a href="structs.html"><strong aria-hidden="true">5.</strong> Structures &amp; Unions &amp; Enums</a></li><li><ol class="section"><li class="expanded "><a href="structs/ch05-01-struct.html"><strong aria-hidden="true">5.1.</strong> struct</a></li><li class="expanded "><a href="structs/ch05-02-union.html"><strong aria-hidden="true">5.2.</strong> union</a></li><li class="expanded "><a href="structs/ch05-03-enum.html"><strong aria-hidden="true">5.3.</strong> enum</a></li></ol></li><li class="expanded "><a href="controls.html"><strong aria-hidden="true">6.</strong> Control Flow</a></li><li><ol class="section"><li class="expanded "><a href="controls/ch06-01-if-else.html"><strong aria-hidden="true">6.1.</strong> if/else</a></li><li class="expanded "><a href="controls/ch06-02-switch.html"><strong aria-hidden="true">6.2.</strong> switch</a></li><li class="expanded "><a href="controls/ch06-03-for.html"><strong aria-hidden="true">6.3.</strong> for</a></li><li><ol class="section"><li class="expanded "><a href="controls/ch06-04-break.html"><strong aria-hidden="true">6.3.1.</strong> break</a></li><li class="expanded "><a href="controls/ch06-05-continue.html"><strong aria-hidden="true">6.3.2.</strong> continue</a></li><li class="expanded "><a href="controls/ch06-06-fallthrough.html"><strong aria-hidden="true">6.3.3.</strong> fallthrough</a></li></ol></li><li class="expanded "><a href="controls/ch06-09-in.html"><strong aria-hidden="true">6.4.</strong> in</a></li></ol></li><li class="expanded "><a href="exprs.html"><strong aria-hidden="true">7.</strong> Expressions</a></li><li class="expanded "><a href="libs.html"><strong aria-hidden="true">8.</strong> Libraries &amp; Loads</a></li><li><ol class="section"><li class="expanded "><a href="libs/ch08-01-lib.html"><strong aria-hidden="true">8.1.</strong> lib</a></li><li class="expanded "><a href="libs/ch08-02-load.html"><strong aria-hidden="true">8.2.</strong> load</a></li><li class="expanded "><a href="libs/ch08-03-extern.html"><strong aria-hidden="true">8.3.</strong> extern</a></li></ol></li><li class="expanded "><a href="pointers.html"><strong aria-hidden="true">9.</strong> Pointers &amp; References</a></li><li><ol class="section"><li class="expanded "><a href="pointers/ch09-01-pointer.html"><strong aria-hidden="true">9.1.</strong> Pointer</a></li><li class="expanded "><a href="pointers/ch09-02-reference.html"><strong aria-hidden="true">9.2.</strong> Reference</a></li></ol></li><li class="expanded "><a href="models.html"><strong aria-hidden="true">10.</strong> Models</a></li><li><ol class="section"><li class="expanded "><a href="models/ch10-01-func.html"><strong aria-hidden="true">10.1.</strong> Function model</a></li><li class="expanded "><a href="models/ch10-02-struct-union.html"><strong aria-hidden="true">10.2.</strong> Struct &amp; Union model</a></li></ol></li><li class="expanded "><a href="attributes.html"><strong aria-hidden="true">11.</strong> Attributes</a></li><li><ol class="section"><li class="expanded "><a href="attributes/ch11-01-alone.html"><strong aria-hidden="true">11.1.</strong> Alone attribute</a></li><li class="expanded "><a href="attributes/ch11-02-group.html"><strong aria-hidden="true">11.2.</strong> Group attribute</a></li></ol></li><li class="expanded "><a href="memory.html"><strong aria-hidden="true">12.</strong> Memory model</a></li><li><ol class="section"><li class="expanded "><a href="memory/ch12-01-raii.html"><strong aria-hidden="true">12.1.</strong> RAII</a></li></ol></li><li class="expanded "><a href="extended.html"><strong aria-hidden="true">13.</strong> Extended</a></li><li><ol class="section"><li class="expanded "><a href="extended/ch13-01-annotations.html"><strong aria-hidden="true">13.1.</strong> Annotations</a></li><li class="expanded "><a href="extended/ch13-02-empty.html"><strong aria-hidden="true">13.2.</strong> Empty values</a></li><li class="expanded "><a href="extended/ch13-03-unsafe.html"><strong aria-hidden="true">13.3.</strong> unsafe</a></li></ol></li><li class="expanded "><a href="errors.html"><strong aria-hidden="true">14.</strong> Error handling</a></li><li><ol class="section"><li class="expanded "><a href="errors/ch14-01-panic.html"><strong aria-hidden="true">14.1.</strong> panic</a></li></ol></li><li class="expanded "><a href="testing.html"><strong aria-hidden="true">15.</strong> Testing</a></li><li><ol class="section"><li class="expanded "><a href="testing/ch14-01-unit.html"><strong aria-hidden="true">15.1.</strong> Unit testing</a></li><li class="expanded "><a href="testing/ch14-02-doc.html"><strong aria-hidden="true">15.2.</strong> Documentation testing</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
 
-    <!-- Set the theme before any content is loaded, prevents flash -->
-    <script type="text/javascript">
-        var theme;
-        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
-        if (theme === null || theme === undefined) { theme = default_theme; }
-        var html = document.querySelector('html');
-        html.classList.remove('no-js')
-        html.classList.remove('ayu')
-        html.classList.add(theme);
-        html.classList.add('js');
-    </script>
+        <div id="page-wrapper" class="page-wrapper">
 
-    <!-- Hide / unhide sidebar before it is displayed -->
-    <script type="text/javascript">
-        var html = document.querySelector('html');
-        var sidebar = 'hidden';
-        if (document.body.clientWidth >= 1080) {
-            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
-            sidebar = sidebar || 'visible';
-        }
-        html.classList.remove('sidebar-visible');
-        html.classList.add("sidebar-" + sidebar);
-    </script>
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
 
-    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-        <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-            <ol class="chapter">
-                <li class="expanded affix "><a href="introduction.html">Introduction</a></li>
-                <li class="expanded "><a href="gstarted.html"><strong aria-hidden="true">1.</strong> Getting Started</a>
-                </li>
-                <li>
-                    <ol class="section">
-                        <li class="expanded "><a href="gstarted/ch01-01-installation.html"><strong
-                                    aria-hidden="true">1.1.</strong> Installation</a></li>
-                        <li class="expanded "><a href="gstarted/ch01-02-hello-world.html"><strong
-                                    aria-hidden="true">1.2.</strong> Hello World</a></li>
-                    </ol>
-                </li>
-                <li class="expanded "><a href="primitive.html"><strong aria-hidden="true">2.</strong> Primitive</a></li>
-                <li>
-                    <ol class="section">
-                        <li class="expanded "><a href="primitive/ch02-01-comments.html"><strong
-                                    aria-hidden="true">2.1.</strong> Comments</a></li>
-                        <li class="expanded "><a href="primitive/ch02-02-variables.html"><strong
-                                    aria-hidden="true">2.2.</strong> Variables</a></li>
-                        <li class="expanded "><a href="primitive/ch02-03-functions.html"><strong
-                                    aria-hidden="true">2.3.</strong> Functions</a></li>
-                        <li class="expanded "><a href="primitive/ch02-04-strings.html"><strong
-                                    aria-hidden="true">2.4.</strong> Strings</a></li>
-                        <li class="expanded "><a href="primitive/ch02-05-arrays.html"><strong
-                                    aria-hidden="true">2.5.</strong> Arrays &amp; Slices</a></li>
-                        <li class="expanded "><a href="primitive/ch02-06-if_stmt.html"><strong
-                                    aria-hidden="true">2.6.</strong> If statement</a></li>
-                        <li class="expanded "><a href="primitive/ch02-07-for_stmt.html"><strong
-                                    aria-hidden="true">2.7.</strong> For statement</a></li>
-                        <li class="expanded "><a href="primitive/ch02-08-switch_stmt.html"><strong
-                                    aria-hidden="true">2.8.</strong> Switch statement</a></li>
-                    </ol>
-                </li>
-            </ol>
-        </div>
-        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-    </nav>
+                        <h1 class="menu-title">The Monolith Programming Language</h1>
 
-    <div id="page-wrapper" class="page-wrapper">
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/monolithlang/monolith" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
 
-        <div class="page">
-
-            <div id="menu-bar" class="menu-bar">
-                <div id="menu-bar-sticky-container">
-                    <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
-                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
-                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
                         </ul>
-
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
-                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
-                            aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
-
-                    </div>
-
-                    <h1 class="menu-title">The Monolith Programming Language</h1>
-
-                    <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
-                        </a>
-
-                        <a href="https://github.com/monolithlang/monolith" title="Git repository"
-                            aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
-                        </a>
-
                     </div>
                 </div>
-            </div>
+                
 
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
 
-            <div id="search-wrapper" class="hidden">
-                <form id="searchbar-outer" class="searchbar-outer">
-                    <input type="search" name="search" id="searchbar" name="searchbar"
-                        placeholder="Search this book ..." aria-controls="searchresults-outer"
-                        aria-describedby="searchresults-header">
-                </form>
-                <div id="searchresults-outer" class="searchresults-outer hidden">
-                    <div id="searchresults-header" class="searchresults-header"></div>
-                    <ul id="searchresults">
-                    </ul>
-                </div>
-            </div>
-
-
-            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-            <script type="text/javascript">
-                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
-                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                });
-            </script>
-
-            <div id="content" class="content">
-                <main>
-                    <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-                    <p><strong>Monolith</strong> is very similar to the <strong>C Programming Language</strong>, some
-                        princips taked from C and Rust.
-                        I wanna make an ideal and powerful programming language for developing maintainable software. As
-                        of right now, I don’t know any languages suitable for my purposes.</p>
-                    <p>Monolith arose with several thoughts about: </p>
-                    <blockquote>
-                        <p>&gt; Create programming language that can be used as a main tool for complexity development
-                            maintainable software for all categories until to a death.</p>
-                    </blockquote>
-                    <p>Monolith can be used for develop low-level software and components like a OS (Operating Systems),
-                        drivers, system software, for develop maintainable software like a browsers, desktop
-                        application, bots and other.</p>
-                    <h2><a class="header" href="#futures" id="futures">Futures</a></h2>
-                    <ul>
-                        <li>Fast and optimized compilation</li>
-                        <li>Incredible perfomance</li>
-                        <li><strong>Safety</strong>: no null (cannot derefer null pointer), no globals, no UB (Undefined
-                            Behavior)</li>
-                        <li><strong>Backend</strong>: uses LLVM as backend or native code generation with supporting a
-                            lot of most popular architectures.</li>
-                        <li><strong>Transpiler</strong>: can be fast transpiled to other languages by progressive AST to
-                            C, C++, Go, Python ...</li>
-                        <li><strong>Compilation</strong>: simple and easy cross platform compilation for most popular OS
-                            and architectures ...</li>
-                        <li><strong>Size</strong>: by aggressive optimizing and native code generation can give small
-                            sizes at or less than C</li>
-                        <li><strong>Syntax</strong>: simple but productive syntax without unnecessary keywords and
-                            constructions</li>
-                    </ul>
-                    <p>At the current moment Monolith written for <strong>25%</strong>.</p>
-                    <h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
-                    <h1><a class="header" href="#installation" id="installation">Installation</a></h1>
-                    <p>TODO :)</p>
-                    <h1><a class="header" href="#hello-world" id="hello-world">Hello World</a></h1>
-                    <p>Most programming languages starts with &quot;Hello World&quot; example which was introduced from
-                        C programming language by Ken Thompson and Dennis Ritchie.</p>
-                    <pre><code class="language-c">#lib entry;
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<p><strong>Monolith</strong> is very similar to the <strong>C Programming Language</strong>, some princips taked from C and Rust.
+I wanna make an ideal and powerful programming language for developing maintainable software. As of right now, I don’t  know any languages suitable for my purposes.</p>
+<p>Monolith arose with several thoughts about: </p>
+<blockquote>
+<p>&gt; Create programming language that can be used as a main tool for complexity development maintainable software for all categories until to a death.</p>
+</blockquote>
+<p>Monolith can be used for develop low-level software and components like a OS (Operating Systems), drivers, system software, for develop maintainable software like a browsers, desktop application, bots and other.</p>
+<h2><a class="header" href="#futures" id="futures">Futures</a></h2>
+<ul>
+<li>Fast and optimized compilation</li>
+<li>Incredible perfomance</li>
+<li><strong>Safety</strong>: no null (cannot derefer null pointer), no globals, no UB (Undefined Behavior)</li>
+<li><strong>Backend</strong>: uses LLVM as backend or native code generation with supporting a lot of most popular architectures.</li>
+<li><strong>Transpiler</strong>: can be fast transpiled to other languages by progressive AST to C, C++, Go, Python ...</li>
+<li><strong>Compilation</strong>: simple and easy cross platform compilation for most popular OS and architectures ...</li>
+<li><strong>Size</strong>: by aggressive optimizing and native code generation can give small sizes at or less than C</li>
+<li><strong>Syntax</strong>: simple but productive syntax without unnecessary keywords and constructions</li>
+</ul>
+<p>At the current moment Monolith written for <strong>25%</strong>.</p>
+<h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
+<p>Getting started guide with The Monolith Programming Language!</p>
+<h1><a class="header" href="#installation" id="installation">Installation</a></h1>
+<blockquote>
+<p>TODO :)</p>
+</blockquote>
+<h1><a class="header" href="#hello-world" id="hello-world">Hello World</a></h1>
+<p>Most programming languages starts with &quot;Hello World&quot; example which was introduced from C programming language by Ken Thompson and Dennis Ritchie.</p>
+<pre><code class="language-go">#lib entry;
 #load &quot;std&quot; as std;
 
 func entry() -&gt; int64 {
@@ -244,242 +190,929 @@ func entry() -&gt; int64 {
     return 0;
 }
 </code></pre>
-                    <h1><a class="header" href="#primitive" id="primitive">Primitive</a></h1>
-                    <h1><a class="header" href="#comments" id="comments">Comments</a></h1>
-                    <p>Comments very similar to C, but takes documentation conception from Go &amp; Rust with some
-                        improvements.</p>
-                    <pre><pre class="playpen"><code class="language-rust">
+<h1><a class="header" href="#primitives" id="primitives">Primitives</a></h1>
+<p>Every value in Monolith its a data type. 
+Monolith are statically-typed programming language.</p>
+<blockquote>
+<p><strong><em>Note:</em></strong> Compiler must know variable type at compile time.</p>
+</blockquote>
+<h1><a class="header" href="#comments" id="comments">Comments</a></h1>
+<p>Comments are divided into two types: <strong>regular</strong> and <strong>documentary</strong>. </p>
+<p>Regular comments are ignored by the compiler, and the documentation comments used for generating project documentation.</p>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<ul>
+<li>Regular comment which are ignored by the compiler:
+<ul>
+<li><code>// Oneline comment for newline \n</code></li>
+<li><code>/* Multiline comment by the block delimiter */</code></li>
+</ul>
+</li>
+<li>Documentation comment which will be parsed:
+<ul>
+<li><code>/// Oneline documentation comment for newline \n</code></li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#example" id="example">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
-</span>// Oneline comment
-// Oneline but with multiline style
+</span>// Oneline comment.
+// Oneline but with multiline style.
 
-/**
- * Multiline
- * C-Styled comment
-*/
+    // Copyright (c) 2019 0x9ef. All rights reserved.
+    // Use of this source code is governed by an MIT license
+    // that can be found in the LICENSE file.
 
-/// `func` documentation comment ...
+/* Multiline comment. */
+
+    /** 
+    * Copyright (c) 2019 0x9ef. All rights reserved.
+    * Use of this source code is governed by an MIT license 
+    * that can be found in the LICENSE file.
+    */
+
+/// `func` documentation comment
+/// ...
+
+    /// Copyright (c) 2019 0x9ef. All rights reserved.
+    /// Use of this source code is governed by an MIT license
+    /// that can be found in the LICENSE file.
 <span class="boring">}
-</span></code></pre>
-                    </pre>
-                    <h1><a class="header" href="#variables" id="variables">Variables</a></h1>
-                    <p>Variables only are declared with <code>let</code> keyword. <code>let</code> statement support
-                        multiple-variable declaration.</p>
-                    <p><strong>Note:</strong> let only means a LOCAL declaration inside of function. If you want to
-                        declare constant or static variable outside of function, you must use:</p>
-                    <p><code>const IDENT [type] = value;</code> | <code>static IDENT [type] = value;</code> without
-                        <code>let</code> keyword.</p>
-                    <pre><pre class="playpen"><code class="language-rust">
+</span></code></pre></pre>
+<h1><a class="header" href="#operators" id="operators">Operators</a></h1>
+<h2><a class="header" href="#example-lexer" id="example-lexer">Example (Lexer)</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
-</span>    // Simple `let` statement. 
-    // Automatically assigned `int32` type with `0` literal.
-    let x = 0; // int32
+</span>pub enum tokens (int32) {
+    ...
 
-    // `let` statement with no value. 
-    // Between that `let` statement have default value assignment. 
-    let y int32; // int32 with 0 literal
+    PLUS,  // +
+    MINUS, // -
+    DIV,   // /
+    MUL,   // *
+    MOD,   // %
+    INC,   // ++
+    DEC,   // --
 
-    // `let` statement with forced type expression.
-    let z uint64 = 0;   // uint64
-    let z_ = (uint64)0; // uint64 with forced type casting
-    
-    // `let` statement with multiple variable declaration.
-    let a, b, c = 0, (int64)0, &quot;&quot;; // int32, int64, string
+    BITWISE_XOR,    // ^
+    BITWISE_OR,     // |
+    BITWISE_AND,    // &amp;
+    BITWISE_NOT,    // ~
+    BITWISE_LSHIFT, // &lt;&lt;
+    BITWISE_RSHIFT, // &gt;&gt;
+
+    LOGICAL_OR,  // ||
+    LOGICAL_AND, // &amp;&amp;
+    LOGICAL_NOT, // !
+
+    OP_EQUAL,         // ==
+    OP_NEQUAL,        // !=
+    OP_GREATER,       // &lt;
+    OP_LESS,          // &gt; 
+    OP_GREATER_EQUAL, // &lt;=
+    OP_LESS_EQUAL,    // &gt;=
+    OP_THREEWAY,      // &lt;=&gt;
+};
 <span class="boring">}
-</span></code></pre>
-                    </pre>
-                    <h1><a class="header" href="#functions" id="functions">Functions</a></h1>
-                    <blockquote>
-                        <p><strong>WARNING!</strong> Function can have default values, but cannot be overloaded.</p>
-                    </blockquote>
-                    <p>Function without any arguments and returned values.</p>
-                    <pre><code class="language-go">func nosense() -&gt; {}
+</span></code></pre></pre>
+<h1><a class="header" href="#keywords" id="keywords">Keywords</a></h1>
+<h2><a class="header" href="#example-lexer-1" id="example-lexer-1">Example (Lexer)</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>pub enum tokens (kind_t) {
+    ...
 
-</code></pre>
-                    <p>Primitive function with two arguments but without default values.</p>
-                    <pre><code class="language-go">func mul(a, b int32) -&gt; int64 {
-    return (int64)a * b;
+    KW_AS,        // as
+    KW_ASM,       // asm
+    KW_ASSERT,    // assert
+    KW_LET,       // let
+    KW_BREAK,     // break
+    KW_CASE,      // case
+    KW_CONST,     // const
+    KW_CONTINUE,  // continue
+    KW_DEFER,     // defer
+    KW_DEFAULT,   // default
+    KW_DEBUG,     // #debug
+    KW_EXTERN,    // extern
+    KW_EXTEND,    // extend
+    KW_ENUM,      // enum
+    KW_ELSE,      // else
+    KW_EMPTY,     // empty
+    KW_MAP,       // map
+    KW_MODEL,     // model
+    KW_FALSE,     // false
+    KW_FOR,       // for
+    KW_OPTION,    // option
+
+    KW_FUNC,      // func
+    KW_GOTO,      // goto
+    KW_IF,        // if
+    KW_LIB,       // #lib
+    KW_LOAD,      // #load
+    KW_IN,        // in
+    KW_INTERFACE, // interface
+    KW_RETURN,    // return
+    KW_SIZEOF,    // sizeof
+    KW_OFFSETOF,  // offsetof
+    KW_ALIGNOF,   // alignof
+    KW_STRUCT,    // struct
+    KW_SWITCH,    // switch
+    KW_STATIC,    // static
+    KW_TRUE,      // true
+    KW_TYPE,      // type
+    KW_UNION,     // union
+    KW_PUB,       // pub
+};
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#literals" id="literals">Literals</a></h1>
+<p>Monolith have string <code>&quot;&quot;</code>, character <code>''</code>, integer <code>0</code>, float <code>0.0</code>, boolean <code>true</code>, unit <code>() {}</code> literals.</p>
+<p>Integer can be expanded by using a octal, binary, hexadecimal notation:</p>
+<ul>
+<li>Octal notation <code>0o</code> prefix, <code>0o1234567</code></li>
+<li>Binary notation <code>0b</code> prefix, <code>0b00010001</code></li>
+<li>Hexadecimal notation <code>0x</code> prefix, <code>0x9ef</code>, <code>0xff</code>, <code>0x53E2bf</code></li>
+</ul>
+<p>Underscores can be inserted in integer literals for more readability, eg: <code>1_200</code> is the same as <code>1200</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>func entry() -&gt; int64 {
+    let octal       = 0o1234567;
+    let binary      = 0b00010001;
+    let hexadecimal = 0x9ef;
+
+    let str     = &quot;&quot;;
+    let integer = 0;
+    let float   = 0.0;
+    let boolean bool = true;
+    return 0;
 }
-</code></pre>
-                    <p>Primitive function with arguments and default values.</p>
-                    <pre><code class="language-go">func mul_by_default_64(a, b int32 = 64) -&gt; int64 {
-    return (int64)a * b;
-}
-</code></pre>
-                    <h1><a class="header" href="#strings" id="strings">Strings</a></h1>
-                    <p>Monolith have two builtin types for release one-byte string or multi-wide string.
-                        Traditional one-byte string assigned with type string, multi-wide string only can have ustring
-                        data type with adjacent aliases. </p>
-                    <pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>    // Simple double-quoted string.
-    let str = &quot;Hello World\n&quot;;
-
-    // Raw double-quoted string.
-    // \n\r\t literal will not be escaped.
-    let rstr = r&quot;Hello World \n\r\t&quot;; // output: Hello World \n\r\t
-
-    // Raw multiple double-quoted string.
-    let mstr = r&quot;My mistress’ eyes are nothing like the sun;
-Coral is far more red than her lips’ red;
-If snow be white, why then her breasts are dun;
-If hairs be wires, black wires grow on her head.
-I have seen roses damasked, red and white,
-But no such roses see I in her cheeks;
-And in some perfumes is there more delight
-Than in the breath that from my mistress reeks.
-I love to hear her speak, yet well I know
-That music hath a far more pleasing sound;
-I grant I never saw a goddess go;
-My mistress when she walks treads on the ground.
-And yet, by heaven, I think my love as rare
-As any she belied with false compare.&quot;;
-
-    let char               = 'A';            // uint8_t
-    let onebyted   string  = &quot;Hello World!&quot;; // []uint8_t
-    let multiwided ustring = &quot;Hello World!&quot;; // []uint32_t
 <span class="boring">}
-</span></code></pre>
-                    </pre>
-                    <h1><a class="header" href="#arrays" id="arrays">Arrays</a></h1>
-                    <h1><a class="header" href="#if-statement" id="if-statement">If statement</a></h1>
-                    <p>Traditional <code>if</code> statement, with else-if branch.</p>
-                    <pre><pre class="playpen"><code class="language-rust">
+</span></code></pre></pre>
+<h1><a class="header" href="#binary-literal" id="binary-literal">Binary literal</a></h1>
+<h1><a class="header" href="#octal-literal" id="octal-literal">Octal literal</a></h1>
+<h1><a class="header" href="#hexadecimal-literal" id="hexadecimal-literal">Hexadecimal literal</a></h1>
+<h1><a class="header" href="#tuples" id="tuples">Tuples</a></h1>
+<p>Tupples is a collection of values of different data types. </p>
+<pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
-</span>    let x = 10;
-    if (x &gt; 10) {
-        x = -1;
-    } else if (x &lt; 10) {
-        x += x * x;
-    } else {
-        x = 0;
+</span>    let tuple = (0, 0, 0);
+    let x, y, z = tuple; // let automatically exports tuple list to an a variables.
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#arrays--slices" id="arrays--slices">Arrays &amp; Slices</a></h1>
+<p>Arrays is a fixed-sized block, slices is a unfixed-sized block which can growable (expanded) at runtime.</p>
+<h2><a class="header" href="#example-1" id="example-1">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    // Array with fixed-sized block.
+    let arr [10]byte;
+    arr[0] = 0x9ef;
+    arr[9] = 0xff;
+    arr[12] = 0x5eb; // error: index out of bounds
+
+    // Slice with unfixed-size block.
+    let slice []byte;
+    slice[0] = -1;       // ok
+    slice[10] = 0x3f;    // ok
+    slice[1000] = 0x9ef; // ok
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#constants--modifiers" id="constants--modifiers">Constants &amp; Modifiers</a></h1>
+<p><code>const</code> is a immutable value which cannot be modified at runtime.</p>
+<h2><a class="header" href="#example-2" id="example-2">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>const MAGIC = 0x55;
+
+func entry() -&gt; int64 {
+    MAGIC = 0; // error: cannot modify constant value
+
+    let const square_param = 0x64; 
+    square_param = square_param * square_param; // error: cannot modify constant value
+
+    return 0;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><em>counter.m</em></p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>// Counter library.
+<span class="boring">lib counter;
+</span>
+// Static variable with public modifier.
+pub static COUNTER int32 = 0;
+<span class="boring">}
+</span></code></pre></pre>
+<p><em>entry.m</em></p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">lib entry;
+</span><span class="boring">load &quot;counter&quot; as count32;
+</span>
+// We can increment COUNTER variable by another library.
+func inc() {
+    count32::COUNTER++;
+}
+
+func entry() -&gt; int64 {
+    for {
+        if (COUNTER &gt;= 128) {
+            break;
+        }
+        inc(); // increment COUNTER.
     }
-    std::printf(&quot;%d&quot;, x) // 0
+    return 0;
+}
 <span class="boring">}
-</span></code></pre>
-                    </pre>
-                    <p><code>if</code> can be used as an expression.</p>
-                    <pre><pre class="playpen"><code class="language-rust">
+</span></code></pre></pre>
+<h1><a class="header" href="#types" id="types">Types</a></h1>
+<h1><a class="header" href="#casting" id="casting">Casting</a></h1>
+<p>The type casting syntax equals to C casting syntax, but a slightly different philosophy. You cannot cast float to byte or integer.</p>
+<h2><a class="header" href="#syntax-1" id="syntax-1">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+cast_expr = ...;
+</code></pre>
+<p><em>cast</em>-expression<br>
+    <strong>(type_expr)</strong> expr</p>
+<h2><a class="header" href="#example-3" id="example-3">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
-</span>    let a, b = 0, 10;
-    let x = if ((a + b) == 10) {
-        100
-    } else {
-        -1
-    } 
-    std::printf(&quot;%d&quot;, x); // 100
+</span>    let x int64;
+    let y int128;
+    let z uint128;
+
+    let r = (int128)x * (uint128)y * z;
+    let r0 &amp;uint128;
+    r0 = &amp;z;
+    r0 = (&amp;uint128)&amp;z;
 <span class="boring">}
-</span></code></pre>
-                    </pre>
-                    <h1><a class="header" href="#for-statement" id="for-statement">For statement</a></h1>
-                    <p><code>for</code> statement use conceptions from Go, no needs for <code>loop</code>,
-                        <code>while</code>, <code>do</code>. One looping construction.</p>
-                    <pre><pre class="playpen"><code class="language-rust">
+</span></code></pre></pre>
+<h1><a class="header" href="#aliasing" id="aliasing">Aliasing</a></h1>
+<p>Each alias is subjected to strict checks for <code>_t</code> ending which indicates that it is a basic type (integer, unsigned, floating point, string, character, byte).</p>
+<p><strong><em>Builtin</em></strong> types list:</p>
+<pre><code class="language-go">rune
+
+string  ustring
+
+bool    byte
+
+int8   int16   int32   int64   int128
+uint8  uint16  uint32  uint64  uint128
+
+float32    float64     float128
+complex64  complex128  complex256
+
+intsize  uintsize  void  empty
+</code></pre>
+<h2><a class="header" href="#syntax-2" id="syntax-2">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+type_decl = &quot;type&quot; ...;
+</code></pre>
+<p><em>type</em>-declaration<br>
+    <strong>type</strong> ident ident;</p>
+<h2><a class="header" href="#example-4" id="example-4">Example</a></h2>
+<pre><code class="language-go">// real example
+type intmax_t  int128;
+type uintmax_t uint128;
+</code></pre>
+<h1><a class="header" href="#sum-types" id="sum-types">Sum types</a></h1>
+<h2><a class="header" href="#syntax-3" id="syntax-3">Syntax</a></h2>
+<h2><a class="header" href="#example-5" id="example-5">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>type stmt if_stmt | switch_stmt | for_stmt | return_stmt | defer_stmt | unsafe_stmt ...;
+type decl func_decl | type_decl | lib_decl | load_decl | struct_decl | union_decl | enum_decl ...;
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#functions" id="functions">Functions</a></h1>
+<h1><a class="header" href="#complex" id="complex">Complex</a></h1>
+<p>Complex functions are functions implemented without methods.</p>
+<blockquote>
+<p><strong><em>Note:</em></strong> <code>entry</code> function always must return <code>int64</code> value.</p>
+</blockquote>
+<h2><a class="header" href="#syntax-4" id="syntax-4">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+func_decl = [ &quot;pub&quot; ] &quot;func&quot;, ident, ...;
+</code></pre>
+<p><em>func</em>-declaration<br>
+    [<strong><em>pub</em></strong>] <strong><em>func</em></strong> ( expression ) statement</p>
+<h2><a class="header" href="#example-6" id="example-6">Example</a></h2>
+<pre><code class="language-go">// Complex function
+func print() {
+    std::printf(&quot;%s&quot;, &quot;Hello Simple&quot;);
+}
+
+// Complex function with arguments
+func print_msg(msg string) {
+    std::printf(&quot;%s&quot;, msg);
+}
+
+// Complex function with returned arguments
+func mul(a, b int32) -&gt; int64 {
+    return (int64)a * b;
+}
+
+// Complex function with multiple return arguments (tuple)
+func mul_sq(x, y, z int32) -&gt; (int64, int64) {
+    return ((int64)x * z, (int64)y * z);
+}
+
+func entry() -&gt; int64 {
+    print();
+    print_msg(&quot;Hello World&quot;);
+    
+    let r = mul(5, 5); // 25
+    let r_sq0, r_sq1 = mul_sq(12, 24, 2); // 24, 48
+    return 0;
+}
+</code></pre>
+<h1><a class="header" href="#methods" id="methods">Methods</a></h1>
+<p>Function can work with methods and be defined with methods. Methods may be responsible for a specific implementation of a data type, and also be determined by this very data type.</p>
+<h2><a class="header" href="#syntax-5" id="syntax-5">Syntax</a></h2>
+<pre><code class="language-go">func (method_name type) func_name() -&gt; type { body }
+func (method_name type) func_name() { body }
+</code></pre>
+<h2><a class="header" href="#example-7" id="example-7">Example</a></h2>
+<pre><code class="language-go">struct user {
+    first_name  string,
+    second_name string,
+};
+
+// Setter
+func (data user) set_first_name(v string) {
+    data.first_name = v;
+}
+
+// Getter
+func (data user) get_first_name() -&gt; string {
+    return data.first_name;
+}
+</code></pre>
+<h1><a class="header" href="#closures" id="closures">Closures</a></h1>
+<p>Closures use C++ and Go mixed model.
+Closures can capture local environment of standart or reference values.</p>
+<h2><a class="header" href="#syntax-6" id="syntax-6">Syntax</a></h2>
+<pre><code class="language-go">func (params) -&gt; type { body }
+func (params) { body }
+func () { body }
+</code></pre>
+<h2><a class="header" href="#example-8" id="example-8">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let x = 0;
+    let y = 0;
+    let z = 0;
+
+    // We capture local scope variables x, y, z, and we take x0, y0, z0 argument.
+    let closure = func(x0, y0, z0 int32) -&gt; int64 {
+        x = x0 * 2;
+        y = y0 * 2;
+        z = z0 * 2;
+
+        return (int64)x * y * z;
+    }(10, 20, 30); 
+
+    // Or
+    closure(10, 20, 30);
+<span class="boring">}
+</span></code></pre></pre>
+<pre><code class="language-go">func sq_fmul(x, y, z int) -&gt; func() -&gt; int64 {
+    return func() -&gt; int64 {
+        let r = x * z * z;
+        return (int64)r;
+    };
+}
+</code></pre>
+<h1><a class="header" href="#pure" id="pure">Pure</a></h1>
+<p>A pure function is always deterministic and has no side effects. </p>
+<p>This means that the function cannot change static local, non-local data, and also there is no mutation of local static, non-local variables.</p>
+<h2><a class="header" href="#example-9" id="example-9">Example</a></h2>
+<pre><code class="language-go">#[[pure]]
+func sum(a, b const int32) -&gt; int32 {
+    return a + b;
+}
+</code></pre>
+<h1><a class="header" href="#inlined" id="inlined">Inlined</a></h1>
+<p>The function can be marked as an inline attribute, this will be a hint to the compiler that the body of the function can be substituted at each point of the call, instead of generating a call code.</p>
+<h2><a class="header" href="#example-10" id="example-10">Example</a></h2>
+<pre><code class="language-go">#[[inline]]
+func mul(a, b int32) -&gt; int64 {
+    return (int64)a * b;
+}
+</code></pre>
+<h1><a class="header" href="#high-order" id="high-order">High Order</a></h1>
+<h1><a class="header" href="#structures--unions--enums" id="structures--unions--enums">Structures &amp; Unions &amp; Enums</a></h1>
+<h1><a class="header" href="#struct" id="struct">struct</a></h1>
+<h2><a class="header" href="#syntax-7" id="syntax-7">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+struct_decl = &quot;struct&quot;, ident, &quot;{&quot;, ... &quot;};&quot;;
+</code></pre>
+<p><em>struct</em>-declaration<br>
+    <strong>struct</strong> ident statement</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>struct structure_name {
+    field_name data_type,
+    ...
+};
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#example-11" id="example-11">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>struct lexer {
+    ch                rune,
+    offset            int32,
+    rd_offset         int32,
+    line_offset       int32,
+    line_start_offset int32,
+};
+
+const INVALID int32 = -1;
+
+func entry() -&gt; int64 {
+    let obj = &amp;lexer{
+        ch                = 0,
+        offset            = 0,
+        rd_offset         = 0,
+        line_offset       = 10,
+        line_start_offset = 25,
+    };
+    return 0;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#union" id="union">union</a></h1>
+<h2><a class="header" href="#syntax-8" id="syntax-8">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+union_decl = &quot;union&quot;, ident, &quot;{&quot;, ... &quot;};&quot;;
+</code></pre>
+<p><em>union</em>-declaration<br>
+    <strong>union</strong> ident statement</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>union union_name {
+    field_name data_type,
+    ...
+};
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#example-12" id="example-12">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>union mem_pool {
+    __permitted_chunk0 int16,
+    permitted_chunk1 int32,
+};
+
+func entry() -&gt; int64 {
+    let obj = &amp;mem_pool{
+        __permitted_chunk0 = 0xff,
+    };
+    obj.permitted_chunk1 = 0; // ERR
+    return 0;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#enum" id="enum">enum</a></h1>
+<h2><a class="header" href="#syntax-9" id="syntax-9">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+enum_decl = &quot;enum&quot;, ident, [ &quot;(&quot; ident &quot;)&quot; ] &quot;{&quot;, ... &quot;};&quot;;
+</code></pre>
+<p><em>enum</em>-declaration<br>
+    <strong>enum</strong> ident [ (type) ] statement</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum ident {
+    VALUE, 
+    ...
+}; // int32 by default
+
+enum ident (type) {
+    VALUE, 
+    VALUE0 = 200,
+    ...
+}; // type
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#example-13" id="example-13">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum colors {
+    RED,
+    GREEN,
+    BLUE,
+}; // int32
+
+enum colors (int8) {
+    RED, GREEN, BLUE,
+}; // int8
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#control-flow" id="control-flow">Control Flow</a></h1>
+<h1><a class="header" href="#ifelse" id="ifelse">if/else</a></h1>
+<h2><a class="header" href="#syntax-10" id="syntax-10">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+if_stmt = &quot;if&quot;, &quot;(&quot;, expr, &quot;)&quot;, block_stmt;
+</code></pre>
+<p><em>if</em>-statement<br>
+    <strong>if</strong> ( expression ) statement</p>
+<p><em>label</em>-statement<br>
+    
+<strong><em>case</em></strong> expression: statement<br>
+    <strong><em>default</em></strong>: statement<br></p>
+<h2><a class="header" href="#example-14" id="example-14">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let x = 0;
+    if (x &gt; 0) {
+        x++;
+    } else if (x &lt; 0) {
+        x--;
+    } else {
+        x = x * x;
+    }
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#switch" id="switch">switch</a></h1>
+<h2><a class="header" href="#syntax-11" id="syntax-11">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+switch_stmt = &quot;switch&quot;, &quot;(&quot;, expr, &quot;)&quot;, block_stmt;
+</code></pre>
+<p><em>switch</em>-statement<br>
+    <strong><em>switch</em></strong> ( expression ) statement</p>
+<p><em>label</em>-statement<br>
+    
+<em><strong>case</strong></em> expression: statement<br>
+    <strong><em>default</em></strong>: statement<br></p>
+<h2><a class="header" href="#example-15" id="example-15">Example</a></h2>
+<pre><code class="language-go">    let name = &quot;Jack&quot;;
+    switch (name) {
+        case &quot;Jack&quot;:
+            std::printf(&quot;%s&quot;, &quot;I know you, Jack&quot;);
+        case &quot;Abram&quot;:
+            std::printf(&quot;%s&quot;, &quot;I know you, Abram&quot;);
+        default:
+            std::printf(&quot;I dont know you, %s&quot;, name);
+            break;
+    }
+</code></pre>
+<h1><a class="header" href="#for" id="for">for</a></h1>
+<h2><a class="header" href="#syntax-12" id="syntax-12">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+for_stmt = ...;
+</code></pre>
+<p><em>for</em>-statement<br>
+    <strong><em>for</em></strong> ( expression ) statement</p>
+<p><em>control</em>-statement<br>
+    
+<em><strong>break</strong></em>;<br>
+    <strong><em>continue</em></strong>;<br>
+    <strong><em>fallthrough</em></strong>;</p>
+<h2><a class="header" href="#example-16" id="example-16">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    // Infinity loop
+    let n int32;
+    for {
+        n++;
+        if (n &gt;= 128) {
+            break; // n == 128 true
+        }
+    }
+
+    // Conditional statement
+    for (n &lt; 256) {
+        n++;
+    }
+
+    // Conditional statement with delclaration body
+    for (let i = 0; i &lt;= 512; i++) {
+        n++;
+    }
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#break" id="break">break</a></h1>
+<p>The <code>break</code> keyword means stopping and exiting from the current loop.</p>
+<h2><a class="header" href="#syntax-13" id="syntax-13">Syntax</a></h2>
+<pre><code class="language-ebnf">break = &quot;break&quot; ;
+</code></pre>
+<h2><a class="header" href="#example-17" id="example-17">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
 </span>    let n = 0;
-    
-    // infinity loop
     for {
+        if (n &gt;= 128) {
+            break; // stop and exit from current loop
+        }
         n++;
     }
-    
-    // do-while replacement
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#continue" id="continue">continue</a></h1>
+<p>The <code>continue</code> keyword means a specific continuation (skipping) of the loop.</p>
+<h2><a class="header" href="#syntax-14" id="syntax-14">Syntax</a></h2>
+<pre><code class="language-ebnf">continue = &quot;continue&quot; ;
+</code></pre>
+<h2><a class="header" href="#example-18" id="example-18">Example</a></h2>
+<p>This is an infinitive example.</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let n = 0;
     for {
-        if (n == 0xff) {
+        if (n &gt;= 128) {
             break;
         } else {
-            n++;
+            continue; // go to start of loop
         }
-    }
-    
-    // loop for 10 times
-    for (let i = 0; i &lt; 10; i++) {
-        std::printf(&quot;Hello!&quot;);
+        n++; // will not be executed, because we skip the loop
     }
 <span class="boring">}
-</span></code></pre>
-                    </pre>
-                    <h1><a class="header" href="#switch-statement" id="switch-statement">Switch statement</a></h1>
-                    <p><code>switch</code> conception similar to C, Go.</p>
-                    <pre><code class="language-go">    let name = &quot;Alisa&quot;;
-    switch (name) {
-        case &quot;Jack&quot;:
-            std::printf(&quot;Your name is Jack&quot;);
-        case &quot;Alisa&quot;:
-            std::printf(&quot;Your name is Alisa&quot;);
-    }
+</span></code></pre></pre>
+<h1><a class="header" href="#fallthrough" id="fallthrough">fallthrough</a></h1>
+<h2><a class="header" href="#syntax-15" id="syntax-15">Syntax</a></h2>
+<pre><code class="language-ebnf">fallthrough = &quot;fallthrough&quot; ;
 </code></pre>
+<h2><a class="header" href="#example-19" id="example-19">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#in" id="in">in</a></h1>
+<h2><a class="header" href="#syntax-16" id="syntax-16">Syntax</a></h2>
+<p><em>in</em>-expression<br>
+    <strong><em>in</em></strong> ident</p>
+<h2><a class="header" href="#example-20" id="example-20">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let magic = 244;
+    let magic_arr = []int32{0, 0, 1, 2, 45, 32, 55, 244, 24, 98};
+    if (magic in magic_arr) {
+        std::printf(&quot;Founded MAGIC value in magic_arr&quot;);
+    } else {
+        std::printf(&quot;Not founded MAGIC value in magic_arr&quot;);
+    }
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#expressions" id="expressions">Expressions</a></h1>
+<h1><a class="header" href="#libraries--loads" id="libraries--loads">Libraries &amp; Loads</a></h1>
+<h1><a class="header" href="#lib" id="lib">lib</a></h1>
+<p>Uses the understanding of the “library” which can be implemented by the second side, and can also be connected as an addition to the standard program.</p>
+<p>There are two build states: <em>program</em> and <em>library</em>.</p>
+<ul>
+<li><em>KIND_PROGRAM</em> = &quot;program&quot;;</li>
+<li><em>KIND_LIBRARY</em> = &quot;library&quot;;</li>
+</ul>
+<p>Entry (main) program always are &quot;entry.m&quot; with &quot;entry&quot; library which can load another external libraries.</p>
+<h2><a class="header" href="#syntax-17" id="syntax-17">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+lib_decl = &quot;#lib&quot;, ident, &quot;;&quot;;
+</code></pre>
+<p><em>lib</em>-declaration<br>
+    <strong>#lib</strong> ident</p>
+<h2><a class="header" href="#example-21" id="example-21">Example</a></h2>
+<p><em>math.m</em></p>
+<pre><code class="language-go">// Define new `math library
+#lib math;
 
-                </main>
+// `mul` function ...
+pub func mul(a, b int32) -&gt; int64 {
+    return (int64)a * b;
+}
+</code></pre>
+<p><em>entry.m</em></p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">lib entry;
+</span><span class="boring">load &quot;std&quot;;
+</span><span class="boring">load &quot;math&quot; as m; // load external library `math` with `m` alias
+</span>
+func entry() -&gt; int64 {
+    let r = m::mul(10, 10); // 100
+    std::printf(&quot;Resulting value: %d&quot;, r);
+    return 0;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#load" id="load">load</a></h1>
+<p><code>load</code> is an improved <code>#include</code> from C, but have another included scope. Unused functions, constants, variables, etc will not be componed into a static object/executable file.</p>
+<h2><a class="header" href="#syntax-18" id="syntax-18">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+load_decl = &quot;#load&quot;, string [ &quot;as&quot;, ident ] &quot;;&quot;;
+</code></pre>
+<p><em>load</em>-declaration<br>
+    <strong>#load</strong> ident [ as ident ]</p>
+<h2><a class="header" href="#example-22" id="example-22">Example</a></h2>
+<pre><code class="language-c">#load &quot;std&quot;;           // std
+#load &quot;winapi&quot; as w32; // w32 alias, uses w32::
 
-                <nav class="nav-wrapper" aria-label="Page navigation">
-                    <!-- Mobile navigation buttons -->
+func entry() -&gt; int64 {
+    return 0;
+}
+</code></pre>
+<h1><a class="header" href="#extern" id="extern">extern</a></h1>
+<h1><a class="header" href="#pointers--references" id="pointers--references">Pointers &amp; References</a></h1>
+<h1><a class="header" href="#pointers" id="pointers">Pointers</a></h1>
+<p>Pointers are useful, but at some points pointers should be avoided and references should be used instead. </p>
+<ol>
+<li>The first and most important reason is the null pointer, dereferencing the null pointer will cause the program to crash.</li>
+<li>A dangling pointer which refers to an invalid memory block is also possible. This occurs when the object is deleted or moved without pointers to pointers to zero.</li>
+<li>A reference unlike a pointer cannot be uninitialized.</li>
+</ol>
+<h2><a class="header" href="#example-23" id="example-23">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let p *int32; // int32 pointer
+    let x, y, z = 10, 20, 30;
+    p = &amp;x; // *p now 10
+    p = &amp;y; // *p now 20
+    p = &amp;z; // *p now 30
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#reference" id="reference">Reference</a></h1>
+<h1><a class="header" href="#models" id="models">Models</a></h1>
+<h1><a class="header" href="#function-model" id="function-model">Function model</a></h1>
+<h1><a class="header" href="#struct--union-model" id="struct--union-model">Struct &amp; Union model</a></h1>
+<h1><a class="header" href="#attributes" id="attributes">Attributes</a></h1>
+<h1><a class="header" href="#alone-attribute" id="alone-attribute">Alone attribute</a></h1>
+<p>Attributes allow you to specify additional information for various constructs such as data types, functions, variables, and so on. This information can be used by the hint compiler to generate more effective code.</p>
+<h2><a class="header" href="#syntax-19" id="syntax-19">Syntax</a></h2>
+<pre><code class="language-c">attr_decl = &quot;#&quot;, &quot;[&quot; [ ... ] &quot;]&quot;;
+</code></pre>
+<h2><a class="header" href="#example-24" id="example-24">Example</a></h2>
+<pre><code class="language-go">// This function with a = 10, b = 10 will be inlined to 
+//     return (int64)10 * 10;
+#[[inline]]
+func mul(a, b int32) -&gt; int64 {
+    return (int64)a * b;
+}
 
+// empty attribute means that function has no body with any logical elements, does not return any values, don't not have any arguments. 
+#[[empty]]
+func empty() {}
 
+// noreturn attribute means that function doesnt have return statement and return variables.
+#[[noreturn]]
+func nosense(a, b int32) {
+    let _ = a + b; // nosense
+}
 
+// pure attribute means that function is pure (determined, without any side-effects) by default.
+#[[pure]]
+func pure_calc(x, y const int32) -&gt; int64 {
+    return (int64)x * y;
+}
+</code></pre>
+<h1><a class="header" href="#group-attribute" id="group-attribute">Group attribute</a></h1>
+<h1><a class="header" href="#memory-model" id="memory-model">Memory model</a></h1>
+<h1><a class="header" href="#raii" id="raii">RAII</a></h1>
+<h1><a class="header" href="#extended" id="extended">Extended</a></h1>
+<h1><a class="header" href="#annotations" id="annotations">Annotations</a></h1>
+<p>Annotations are used for easier reading and understanding of code. Annotations are useful only for variables the practical use of annotations is possible when writing low-level constructions and functions where the role of understanding the input / output parameter is important.</p>
+<p>Annotations can be of two types: input, output.
+I love and respect old school!</p>
+<h2><a class="header" href="#syntax-20" id="syntax-20">Syntax</a></h2>
+<pre><code class="language-go">[ __In__ ] params ...
+[ __Out__ ] params ...
+</code></pre>
+<h2><a class="header" href="#example-25" id="example-25">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>struct mem_pool {
+    // __In__ : input annotation.
+    __In__  pool *intsize,
 
-                    <div style="clear: both"></div>
-                </nav>
+    // __Out__ : ouput annotation.
+    __Out__ out_pool *void,
+};
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#empty-values" id="empty-values">Empty values</a></h1>
+<h1><a class="header" href="#unsafe" id="unsafe">unsafe</a></h1>
+<h1><a class="header" href="#error-handling" id="error-handling">Error handling</a></h1>
+<h1><a class="header" href="#panic" id="panic">panic</a></h1>
+<p><code>panic</code> is triggered when the program has fatal errors or panic is triggered deliberately to debug the program.</p>
+<h2><a class="header" href="#example-26" id="example-26">Example</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>    let x = 0;
+    if (x == 0) {
+        std::panic(&quot;`x` cannot be zero!&quot;);
+    }
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#testing" id="testing">Testing</a></h1>
+<h1><a class="header" href="#unit-testing" id="unit-testing">Unit testing</a></h1>
+<h1><a class="header" href="#documentation-testing" id="documentation-testing">Documentation testing</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
         </div>
 
-        <nav class="nav-wide-wrapper" aria-label="Page navigation">
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
 
+        
 
-        </nav>
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
 
-    </div>
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
 
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
 
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
+        <!-- Custom JS scripts -->
+        
 
-
-
-
-
-    <script type="text/javascript">
-        window.playpen_copyable = true;
-    </script>
-
-
-
-    <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-    <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-    <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-    <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
-
-
-
-    <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-
-
-    <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-    <script src="book.js" type="text/javascript" charset="utf-8"></script>
-
-    <!-- Custom JS scripts -->
-
-
-
-
-    <script type="text/javascript">
-        window.addEventListener('load', function () {
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
-    </script>
+        </script>
+        
+        
 
-
-
-</body>
-
+    </body>
 </html>

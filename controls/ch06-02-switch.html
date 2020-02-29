@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>switch - The Monolith Programming Language</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The Monolith Programming Language Book">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../introduction.html">Introduction</a></li><li class="expanded "><a href="../getstarted.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="../getstarted/ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="../getstarted/ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello World</a></li></ol></li><li class="expanded "><a href="../primitives.html"><strong aria-hidden="true">2.</strong> Primitives</a></li><li><ol class="section"><li class="expanded "><a href="../primitives/ch02-01-comments.html"><strong aria-hidden="true">2.1.</strong> Comments</a></li><li class="expanded "><a href="../primitives/ch02-02-operators.html"><strong aria-hidden="true">2.2.</strong> Operators</a></li><li class="expanded "><a href="../primitives/ch02-03-keywords.html"><strong aria-hidden="true">2.3.</strong> Keywords</a></li><li class="expanded "><a href="../primitives/ch02-04-literals.html"><strong aria-hidden="true">2.4.</strong> Literals</a></li><li><ol class="section"><li class="expanded "><a href="../primitives/ch02-05-binary.html"><strong aria-hidden="true">2.4.1.</strong> Binary literal</a></li><li class="expanded "><a href="../primitives/ch02-06-octal.html"><strong aria-hidden="true">2.4.2.</strong> Octal literal</a></li><li class="expanded "><a href="../primitives/ch02-07-hexadecimal.html"><strong aria-hidden="true">2.4.3.</strong> Hexadecimal literal</a></li></ol></li><li class="expanded "><a href="../primitives/ch02-08-tuples.html"><strong aria-hidden="true">2.5.</strong> Tuples</a></li><li class="expanded "><a href="../primitives/ch02-09-arrays-slices.html"><strong aria-hidden="true">2.6.</strong> Arrays &amp; Slices</a></li><li class="expanded "><a href="../primitives/ch02-10-constants-modifiers.html"><strong aria-hidden="true">2.7.</strong> Constants &amp; Modifiers</a></li></ol></li><li class="expanded "><a href="../types.html"><strong aria-hidden="true">3.</strong> Types</a></li><li><ol class="section"><li class="expanded "><a href="../types/ch03-01-casting.html"><strong aria-hidden="true">3.1.</strong> Casting</a></li><li class="expanded "><a href="../types/ch03-02-aliasing.html"><strong aria-hidden="true">3.2.</strong> Aliasing</a></li><li class="expanded "><a href="../types/ch03-03-sum-types.html"><strong aria-hidden="true">3.3.</strong> Sum types</a></li></ol></li><li class="expanded "><a href="../functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li><ol class="section"><li class="expanded "><a href="../functions/ch04-01-complex.html"><strong aria-hidden="true">4.1.</strong> Complex</a></li><li class="expanded "><a href="../functions/ch04-02-methods.html"><strong aria-hidden="true">4.2.</strong> Methods</a></li><li class="expanded "><a href="../functions/ch04-03-closures.html"><strong aria-hidden="true">4.3.</strong> Closures</a></li><li class="expanded "><a href="../functions/ch04-04-pure.html"><strong aria-hidden="true">4.4.</strong> Pure</a></li><li class="expanded "><a href="../functions/ch04-05-inlined.html"><strong aria-hidden="true">4.5.</strong> Inlined</a></li><li class="expanded "><a href="../functions/ch04-06-high-order.html"><strong aria-hidden="true">4.6.</strong> High Order</a></li></ol></li><li class="expanded "><a href="../structs.html"><strong aria-hidden="true">5.</strong> Structures &amp; Unions &amp; Enums</a></li><li><ol class="section"><li class="expanded "><a href="../structs/ch05-01-struct.html"><strong aria-hidden="true">5.1.</strong> struct</a></li><li class="expanded "><a href="../structs/ch05-02-union.html"><strong aria-hidden="true">5.2.</strong> union</a></li><li class="expanded "><a href="../structs/ch05-03-enum.html"><strong aria-hidden="true">5.3.</strong> enum</a></li></ol></li><li class="expanded "><a href="../controls.html"><strong aria-hidden="true">6.</strong> Control Flow</a></li><li><ol class="section"><li class="expanded "><a href="../controls/ch06-01-if-else.html"><strong aria-hidden="true">6.1.</strong> if/else</a></li><li class="expanded "><a href="../controls/ch06-02-switch.html" class="active"><strong aria-hidden="true">6.2.</strong> switch</a></li><li class="expanded "><a href="../controls/ch06-03-for.html"><strong aria-hidden="true">6.3.</strong> for</a></li><li><ol class="section"><li class="expanded "><a href="../controls/ch06-04-break.html"><strong aria-hidden="true">6.3.1.</strong> break</a></li><li class="expanded "><a href="../controls/ch06-05-continue.html"><strong aria-hidden="true">6.3.2.</strong> continue</a></li><li class="expanded "><a href="../controls/ch06-06-fallthrough.html"><strong aria-hidden="true">6.3.3.</strong> fallthrough</a></li></ol></li><li class="expanded "><a href="../controls/ch06-09-in.html"><strong aria-hidden="true">6.4.</strong> in</a></li></ol></li><li class="expanded "><a href="../exprs.html"><strong aria-hidden="true">7.</strong> Expressions</a></li><li class="expanded "><a href="../libs.html"><strong aria-hidden="true">8.</strong> Libraries &amp; Loads</a></li><li><ol class="section"><li class="expanded "><a href="../libs/ch08-01-lib.html"><strong aria-hidden="true">8.1.</strong> lib</a></li><li class="expanded "><a href="../libs/ch08-02-load.html"><strong aria-hidden="true">8.2.</strong> load</a></li><li class="expanded "><a href="../libs/ch08-03-extern.html"><strong aria-hidden="true">8.3.</strong> extern</a></li></ol></li><li class="expanded "><a href="../pointers.html"><strong aria-hidden="true">9.</strong> Pointers &amp; References</a></li><li><ol class="section"><li class="expanded "><a href="../pointers/ch09-01-pointer.html"><strong aria-hidden="true">9.1.</strong> Pointer</a></li><li class="expanded "><a href="../pointers/ch09-02-reference.html"><strong aria-hidden="true">9.2.</strong> Reference</a></li></ol></li><li class="expanded "><a href="../models.html"><strong aria-hidden="true">10.</strong> Models</a></li><li><ol class="section"><li class="expanded "><a href="../models/ch10-01-func.html"><strong aria-hidden="true">10.1.</strong> Function model</a></li><li class="expanded "><a href="../models/ch10-02-struct-union.html"><strong aria-hidden="true">10.2.</strong> Struct &amp; Union model</a></li></ol></li><li class="expanded "><a href="../attributes.html"><strong aria-hidden="true">11.</strong> Attributes</a></li><li><ol class="section"><li class="expanded "><a href="../attributes/ch11-01-alone.html"><strong aria-hidden="true">11.1.</strong> Alone attribute</a></li><li class="expanded "><a href="../attributes/ch11-02-group.html"><strong aria-hidden="true">11.2.</strong> Group attribute</a></li></ol></li><li class="expanded "><a href="../memory.html"><strong aria-hidden="true">12.</strong> Memory model</a></li><li><ol class="section"><li class="expanded "><a href="../memory/ch12-01-raii.html"><strong aria-hidden="true">12.1.</strong> RAII</a></li></ol></li><li class="expanded "><a href="../extended.html"><strong aria-hidden="true">13.</strong> Extended</a></li><li><ol class="section"><li class="expanded "><a href="../extended/ch13-01-annotations.html"><strong aria-hidden="true">13.1.</strong> Annotations</a></li><li class="expanded "><a href="../extended/ch13-02-empty.html"><strong aria-hidden="true">13.2.</strong> Empty values</a></li><li class="expanded "><a href="../extended/ch13-03-unsafe.html"><strong aria-hidden="true">13.3.</strong> unsafe</a></li></ol></li><li class="expanded "><a href="../errors.html"><strong aria-hidden="true">14.</strong> Error handling</a></li><li><ol class="section"><li class="expanded "><a href="../errors/ch14-01-panic.html"><strong aria-hidden="true">14.1.</strong> panic</a></li></ol></li><li class="expanded "><a href="../testing.html"><strong aria-hidden="true">15.</strong> Testing</a></li><li><ol class="section"><li class="expanded "><a href="../testing/ch14-01-unit.html"><strong aria-hidden="true">15.1.</strong> Unit testing</a></li><li class="expanded "><a href="../testing/ch14-02-doc.html"><strong aria-hidden="true">15.2.</strong> Documentation testing</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">The Monolith Programming Language</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/monolithlang/monolith" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#switch" id="switch">switch</a></h1>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<pre><code class="language-c">// EBNF
+switch_stmt = &quot;switch&quot;, &quot;(&quot;, expr, &quot;)&quot;, block_stmt;
+</code></pre>
+<p><em>switch</em>-statement<br>
+    <strong><em>switch</em></strong> ( expression ) statement</p>
+<p><em>label</em>-statement<br>
+    
+<em><strong>case</strong></em> expression: statement<br>
+    <strong><em>default</em></strong>: statement<br></p>
+<h2><a class="header" href="#example" id="example">Example</a></h2>
+<pre><code class="language-go">    let name = &quot;Jack&quot;;
+    switch (name) {
+        case &quot;Jack&quot;:
+            std::printf(&quot;%s&quot;, &quot;I know you, Jack&quot;);
+        case &quot;Abram&quot;:
+            std::printf(&quot;%s&quot;, &quot;I know you, Abram&quot;);
+        default:
+            std::printf(&quot;I dont know you, %s&quot;, name);
+            break;
+    }
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../controls/ch06-01-if-else.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../controls/ch06-03-for.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../controls/ch06-01-if-else.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../controls/ch06-03-for.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
